@@ -17,7 +17,7 @@ function python(message, image_name, style)
     //Make a promise so the function get selection does not continue until this is done
     return new Promise((resolve, reject) => {
         //Creating child, calling python file, passing url arguement  
-        const childPython = spawn('python', ['../botCartoon/backend/cartoonize.py', '--input_dir', `../botCartoon/backend/input_images/`, '--output_dir', `../botCartoon/output_images`, '--styles', style])
+        const childPython = spawn('python', ['../CartoonBot/backend/cartoonize.py', '--input_dir', `../CartoonBot/backend/input_images/`, '--output_dir', `../CartoonBot/output_images`, '--styles', style])
 
         //On successful opening report output
         childPython.stdout.on('data', (data) => {
@@ -77,7 +77,7 @@ function check_url(message, url)
         let image_name = make_name()
     
         //Save image to path
-        request.get(url).on('error', console.error).pipe(fs.createWriteStream(`../botCartoon/backend/input_images/${image_name}`))
+        request.get(url).on('error', console.error).pipe(fs.createWriteStream(`../CartoonBot/backend/input_images/${image_name}`))
 
         //Get the users choice for the style
         get_selection(message, image_name) 
@@ -150,7 +150,7 @@ function make_name()
 //Clear input_images folder
 function clear_input()
 {
-    let directory = '../botCartoon/backend/input_images/';
+    let directory = '../CartoonBot/backend/input_images/';
 
     fs.readdir(directory, (err, files) => {
         if (err) throw err;
@@ -166,7 +166,7 @@ function clear_input()
 //Clear output_images folder
 function clear_output()
 {
-    let directory = '../botCartoon/output_images';
+    let directory = '../CartoonBot/output_images';
 
     fs.readdir(directory, (err, files) => {
         if (err) throw err;
@@ -184,7 +184,7 @@ function clear_output()
 function build_embed(message, image_name, style)
 {
     //Get the path of the image that was made
-    let file = new Discord.MessageAttachment(`../botCartoon/output_images/${style}/${image_name}`)
+    let file = new Discord.MessageAttachment(`../CartoonBot/output_images/${style}/${image_name}`)
 
     let embed = new Discord.MessageEmbed()
         .setTitle("Cartoonization")

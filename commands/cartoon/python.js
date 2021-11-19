@@ -6,7 +6,7 @@ module.exports = {
     description: 'Send and recieve data from python',
     run: async (client, message, args) => { 
 
-        const childPython = spawn('python', ['../botCartoon/backend/ping.py', 'affordable healthcare'])
+        const childPython = spawn('python', ['../CartoonBot/backend/ping.py', 'affordable healthcare'])
 
         childPython.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
