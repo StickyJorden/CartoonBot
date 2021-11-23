@@ -1,5 +1,5 @@
 # Welcome To Cartoon Bot
-## Made By: Jordan Black
+## Made By: Jordan, Jefferson, Madeline
 
 This is a Discord Bot made in Javascript. 
 
