@@ -1,7 +1,7 @@
 # Welcome To Cartoon Bot
 ## Made By: Jordan, Jefferson, Madeline
 
-This is a Discord Bot made in Javascript. 
+This is a Discord Bot made in Javascript and Python
 
 Steps to run:
 1. Add .env file
