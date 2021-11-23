@@ -1,9 +1,9 @@
 # Welcome To Cartoon Bot
 ## Made By: Jordan, Jefferson, Madeline
 
-This is a Discord Bot made in Javascript and Python
+This is a Discord Bot made in Javascript and Python.
 
-The cartoonization process can be found in the cartoonization.py file.
+The cartoonization process can be found in the cartoonization.py file within the backend folder.
 
 Steps to run:
 1. Add .env file
